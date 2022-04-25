@@ -5,9 +5,9 @@ const UserList = (props) => {
 
 
     return (
-        <div>
+        <React.Fragment>
              {props.userList.map(user => <li>{user.username}</li>)}
-        </div>
+        </React.Fragment>
     )
 }
 
