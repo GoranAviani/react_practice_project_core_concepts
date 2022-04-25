@@ -7,9 +7,9 @@ const App = () => {
     const [userList, setUserList] = useState([])
 
     const expandUserList = (userInput) => {
-        console.log(userList)
-        setUserList(...userList, userInput)
-        console.log('APP' + userList)
+        console.log(userInput)
+        setUserList([...userList, userInput])
+        //console.log('APP' + userList)
 
     }
 
