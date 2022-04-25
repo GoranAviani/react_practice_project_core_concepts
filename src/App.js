@@ -8,7 +8,8 @@ const App = () => {
 
     const expandUserList = (userInput) => {
         console.log(userInput)
-        setUserList([...userList, userInput])
+        setUserList((prevUserList)=>{return[...prevUserList, userInput]})
+        //setUserList([...userList, userInput])
         //console.log('APP' + userList)
 
     }
