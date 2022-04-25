@@ -12,7 +12,7 @@ const AddUser = (props) => {
     }
 
     const ageValidation = (age) => {
-        if (age < 0){
+        if (+age < 0){
             console.log("user to young")
             return false
         }
@@ -30,7 +30,7 @@ const AddUser = (props) => {
     const submitHandler = (e) => {
         e.preventDefault()
        // console.log(userInput)
-        if (ageValidation(parseInt(userInput.age)) && userNameValidation(userInput.username)){
+        if (ageValidation(userInput.age) && userNameValidation(userInput.username)){
            props.addUser(userInput)
             setUserInput({username: '', age:''})
         }
