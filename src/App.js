@@ -1,6 +1,7 @@
 import React , {useState} from "react";
 
 import AddUser from "./Users/AddUser";
+import UserList from "./Users/UserList";
 
 const App = () => {
     const [userList, setUserList] = useState([])
@@ -14,6 +15,7 @@ const App = () => {
     return (
         <div>
         <AddUser addUser={expandUserList}/>
+        <UserList/>
     </div>
     )
 }
