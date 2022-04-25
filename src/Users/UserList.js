@@ -1,9 +1,15 @@
 import React from "react";
 
-const UserList = () => {
+
+
+const UserList = (props) => {
+
+
+
     return(
         <div>
-            UserList
+            {props.userList.map(user => <p>user</p>)}
+
         </div>
     )
 }
