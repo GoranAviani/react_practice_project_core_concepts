@@ -1,25 +1,20 @@
 import React from "react";
 
-
+import './ErrorModal.css'
 
 const ErrorModal = (props) => {
     return (
-        <React.Fragment>
 
-        <React.Fragment>
 
-        </React.Fragment>
-        <React.Fragment>
+        <div className="backdrop">
             <h2>{props.title}</h2>
             <p>
-                            {props.errorMessage}
-
+                {props.errorMessage}
             </p>
             <div>
                 <button>Close</button>
             </div>
-        </React.Fragment>
-        </React.Fragment>
+        </div>
 
     )
 }
