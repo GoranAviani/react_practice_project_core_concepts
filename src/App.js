@@ -6,8 +6,9 @@ import UserList from "./Users/UserList";
 const App = () => {
     const [userList, setUserList] = useState([])
 
-    const expandUserList = (userName) => {
-        setUserList([...userList, userName])
+    const expandUserList = (userInput) => {
+        console.log(userList)
+        setUserList(...userList, userInput)
         console.log('APP' + userList)
 
     }
