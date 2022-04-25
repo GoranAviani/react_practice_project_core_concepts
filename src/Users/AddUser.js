@@ -12,19 +12,20 @@ const AddUser = (props) => {
     }
 
     const ageValidation = (age) => {
-        if (+age < 0){
-            console.log("user to young")
-            return false
+        if (+age > 0){
+            return true
+        }else{
+                        console.log("user to young")
+
         }
-        return true
     }
 
     const userNameValidation = (userName) => {
-        if (userName.trim().length <2){
+        if (userName.trim().length >2){
+            return true
+        }else{
             console.log('username too short')
-            return false
-        }
-        return true
+}
     }
 
     const submitHandler = (e) => {
