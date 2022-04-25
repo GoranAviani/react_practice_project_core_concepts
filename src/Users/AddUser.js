@@ -16,6 +16,7 @@ const AddUser = (props) => {
         e.preventDefault()
        // console.log(userInput)
         props.addUser(userInput)
+        setUserInput({username: '', age:''})
 
     }
 
