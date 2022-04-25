@@ -19,7 +19,7 @@ const AddUser = (props) => {
             return true
         } else {
             console.log("user to young")
-            setErrorState({title:"Invalid Age", errorMessage: "user yo young"})
+            setErrorState({title: "Invalid Age", errorMessage: "user yo young"})
         }
     }
 
@@ -28,7 +28,7 @@ const AddUser = (props) => {
             return true
         } else {
             console.log('username too short')
-            setErrorState({title:"Invalid Username", errorMessage: "username to short"})
+            setErrorState({title: "Invalid Username", errorMessage: "username to short"})
         }
     }
 
@@ -46,7 +46,7 @@ const AddUser = (props) => {
     return (
         <React.Fragment>
             {errorState && <ErrorModal title={errorState.title} errorMessage={errorState.errorMessage}/>
-}
+            }
             <form onSubmit={submitHandler}>
                 <input value={userInput.username} onChange={userNameHandler}/>
                 <input value={userInput.age} onChange={ageHandler}/>
