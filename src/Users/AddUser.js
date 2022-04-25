@@ -1,7 +1,10 @@
 import React, {useState} from "react";
 
+import ErrorModal from "../UI/ErrorModal";
+
 const AddUser = (props) => {
-    const [userInput, setUserInput] = useState({username: '', age:''})
+    const [userInput, setUserInput] = useState({username: '', age: ''})
+    const [errorState, setErrorState] = useState('')
 
     const userNameHandler = (e) => {
         setUserInput({...userInput, username: e.target.value})
@@ -12,38 +15,51 @@ const AddUser = (props) => {
     }
 
     const ageValidation = (age) => {
-        if (+age < 0){
+        if (+age > 0) {
+            return true
+        } else {
             console.log("user to young")
-            return false
+            setErrorState({title: "Invalid Age", errorMessage: "user yo young"})
         }
-        return true
     }
 
     const userNameValidation = (userName) => {
-        if (userName.trim().length <2){
+        if (userName.trim().length > 2) {
+            return true
+        } else {
             console.log('username too short')
-            return false
+            setErrorState({title: "Invalid Username", errorMessage: "username to short"})
         }
-        return true
     }
 
     const submitHandler = (e) => {
         e.preventDefault()
-       // console.log(userInput)
-        if (ageValidation(userInput.age) && userNameValidation(userInput.username)){
-           props.addUser(userInput)
-            setUserInput({username: '', age:''})
+        // console.log(userInput)
+        if (ageValidation(userInput.age) && userNameValidation(userInput.username)) {
+            props.addUser(userInput)
+            setUserInput({username: '', age: ''})
         }
         // display error message to user
 
     }
 
+    const resetError = () => {
+        setErrorState('')
+    }
+
     return (
-        <form onSubmit={submitHandler}>
+        <React.Fragment>
+            {
+                errorState &&
+                <ErrorModal title={errorState.title} errorMessage={errorState.errorMessage} resetError={resetError}/>
+            }
+            <form onSubmit={submitHandler}>
                 <input value={userInput.username} onChange={userNameHandler}/>
                 <input value={userInput.age} onChange={ageHandler}/>
                 <button type='submit'>Add User</button>
-        </form>
+            </form>
+        </React.Fragment>
+
     )
 }
 
