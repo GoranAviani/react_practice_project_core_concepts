@@ -7,6 +7,10 @@ const AddUser = (props) => {
         setUserInput({...userInput, username: e.target.value})
     }
 
+    const ageHandler = (e) => {
+        setUserInput({...userInput, age: e.target.value})
+    }
+
 
     const submitHandler = (e) => {
         e.preventDefault()
@@ -18,6 +22,7 @@ const AddUser = (props) => {
     return (
         <form onSubmit={submitHandler}>
                 <input value={userInput.username} onChange={userNameHandler}/>
+                <input value={userInput.age} onChange={ageHandler}/>
                 <button type='submit'>Add User</button>
         </form>
     )
