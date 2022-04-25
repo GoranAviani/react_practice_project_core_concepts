@@ -10,7 +10,7 @@ const AddUser = (props) => {
 
     const submitHandler = (e) => {
         e.preventDefault()
-        console.log(userInput)
+       // console.log(userInput)
         props.addUser(userInput)
 
     }
