@@ -34,7 +34,7 @@ const AddUser = (props) => {
            props.addUser(userInput)
             setUserInput({username: '', age:''})
         }
-
+        // display error message to user
 
     }
 
