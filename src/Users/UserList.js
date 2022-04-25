@@ -6,7 +6,7 @@ const UserList = (props) => {
 
     return (
         <React.Fragment>
-             {props.userList.map(user => <li>{user.username} - {user.age} years old</li>)}
+             {props.userList.map((user, index) => <li key={index} >{user.username} - {user.age} years old</li>)}
         </React.Fragment>
     )
 }
