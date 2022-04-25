@@ -11,10 +11,16 @@ const AddUser = (props) => {
         setUserInput({...userInput, age: e.target.value})
     }
 
+    const ageValidation = (age) => {
+        if (age < 0){
+            console.log("user to young")
+        }
+    }
 
     const submitHandler = (e) => {
         e.preventDefault()
        // console.log(userInput)
+        ageValidation(parseInt(userInput.age))
         props.addUser(userInput)
         setUserInput({username: '', age:''})
 
