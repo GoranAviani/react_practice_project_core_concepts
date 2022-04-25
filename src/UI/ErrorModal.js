@@ -12,7 +12,7 @@ const ErrorModal = (props) => {
                 {props.errorMessage}
             </p>
             <div>
-                <button>Close</button>
+                <button onClick={props.resetError}>Close</button>
             </div>
         </div>
 
