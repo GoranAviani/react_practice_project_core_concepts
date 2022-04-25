@@ -19,10 +19,18 @@ const AddUser = (props) => {
         return true
     }
 
+    const userNameValidation = (userName) => {
+        if (userName.trim().length <1){
+            console.log('username too short')
+            return false
+        }
+        return true
+    }
+
     const submitHandler = (e) => {
         e.preventDefault()
        // console.log(userInput)
-        if (ageValidation(parseInt(userInput.age))){
+        if (ageValidation(parseInt(userInput.age)) && userNameValidation(userInput.username)){
            props.addUser(userInput)
             setUserInput({username: '', age:''})
         }
