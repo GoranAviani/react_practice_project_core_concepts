@@ -17,11 +17,8 @@ const AddUser = (props) => {
 
     return (
         <form onSubmit={submitHandler}>
-            <div>
                 <input value={userInput.username} onChange={userNameHandler}/>
-                add user
                 <button type='submit'>Add User</button>
-            </div>
         </form>
     )
 }
