@@ -45,7 +45,7 @@ const AddUser = (props) => {
 
     return (
         <React.Fragment>
-            {errorState && <ErrorModal title="error happened" errorMessage="something is wrong"/>
+            {errorState && <ErrorModal title={errorState.title} errorMessage={errorState.errorMessage}/>
 }
             <form onSubmit={submitHandler}>
                 <input value={userInput.username} onChange={userNameHandler}/>
