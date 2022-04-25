@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 
 const AddUser = (props) => {
-    const [userInput, setUserInput] = useState({username: '', age:''})
+    const [userInput, setUserInput] = useState({username: '', age: ''})
 
     const userNameHandler = (e) => {
         setUserInput({...userInput, username: e.target.value})
@@ -12,28 +12,28 @@ const AddUser = (props) => {
     }
 
     const ageValidation = (age) => {
-        if (+age > 0){
+        if (+age > 0) {
             return true
-        }else{
-                        console.log("user to young")
+        } else {
+            console.log("user to young")
 
         }
     }
 
     const userNameValidation = (userName) => {
-        if (userName.trim().length >2){
+        if (userName.trim().length > 2) {
             return true
-        }else{
+        } else {
             console.log('username too short')
-}
+        }
     }
 
     const submitHandler = (e) => {
         e.preventDefault()
-       // console.log(userInput)
-        if (ageValidation(userInput.age) && userNameValidation(userInput.username)){
-           props.addUser(userInput)
-            setUserInput({username: '', age:''})
+        // console.log(userInput)
+        if (ageValidation(userInput.age) && userNameValidation(userInput.username)) {
+            props.addUser(userInput)
+            setUserInput({username: '', age: ''})
         }
         // display error message to user
 
@@ -41,9 +41,9 @@ const AddUser = (props) => {
 
     return (
         <form onSubmit={submitHandler}>
-                <input value={userInput.username} onChange={userNameHandler}/>
-                <input value={userInput.age} onChange={ageHandler}/>
-                <button type='submit'>Add User</button>
+            <input value={userInput.username} onChange={userNameHandler}/>
+            <input value={userInput.age} onChange={ageHandler}/>
+            <button type='submit'>Add User</button>
         </form>
     )
 }
