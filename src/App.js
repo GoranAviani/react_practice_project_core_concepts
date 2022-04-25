@@ -1,4 +1,4 @@
-import React , {useState} from "react";
+import React, {useState} from "react";
 
 import AddUser from "./Users/AddUser";
 import UserList from "./Users/UserList";
@@ -6,17 +6,18 @@ import UserList from "./Users/UserList";
 const App = () => {
     const [userList, setUserList] = useState([])
 
-    const expandUserList = (userName) => {
-        setUserList([...userList, userName])
-                console.log('APP' + userList)
+    const expandUserList = (userInput) => {
+        console.log(userInput)
+        setUserList([...userList, userInput])
+        //console.log('APP' + userList)
 
     }
 
     return (
         <div>
-        <AddUser addUser={expandUserList}/>
-        <UserList userList={userList}/>
-    </div>
+            <AddUser addUser={expandUserList}/>
+            <UserList userList={userList}/>
+        </div>
     )
 }
 
