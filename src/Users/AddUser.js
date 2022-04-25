@@ -20,7 +20,7 @@ const AddUser = (props) => {
     }
 
     const userNameValidation = (userName) => {
-        if (userName.trim().length <1){
+        if (userName.trim().length <2){
             console.log('username too short')
             return false
         }
