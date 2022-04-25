@@ -1,5 +1,7 @@
 import React, {useState} from "react";
 
+import ErrorModal from "../UI/ErrorModal";
+
 const AddUser = (props) => {
     const [userInput, setUserInput] = useState({username: '', age: ''})
 
@@ -40,11 +42,15 @@ const AddUser = (props) => {
     }
 
     return (
-        <form onSubmit={submitHandler}>
-            <input value={userInput.username} onChange={userNameHandler}/>
-            <input value={userInput.age} onChange={ageHandler}/>
-            <button type='submit'>Add User</button>
-        </form>
+        <React.Fragment>
+            <ErrorModal title="error happened" errorMessage="something is wrong"/>
+            <form onSubmit={submitHandler}>
+                <input value={userInput.username} onChange={userNameHandler}/>
+                <input value={userInput.age} onChange={ageHandler}/>
+                <button type='submit'>Add User</button>
+            </form>
+        </React.Fragment>
+
     )
 }
 
