@@ -1,4 +1,4 @@
-import React , {useState} from "react";
+import React, {useState} from "react";
 
 import AddUser from "./Users/AddUser";
 import UserList from "./Users/UserList";
@@ -8,15 +8,15 @@ const App = () => {
 
     const expandUserList = (userName) => {
         setUserList([...userList, userName])
-                console.log('APP' + userList)
+        console.log('APP' + userList)
 
     }
 
     return (
         <div>
-        <AddUser addUser={expandUserList}/>
-        <UserList userList={userList}/>
-    </div>
+            <AddUser addUser={expandUserList}/>
+            <UserList userList={userList}/>
+        </div>
     )
 }
 
