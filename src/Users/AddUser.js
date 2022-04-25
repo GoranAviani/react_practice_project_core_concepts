@@ -1,10 +1,10 @@
 import React, {useState} from "react";
 
 const AddUser = (props) => {
-    const [userName, setUserName] = useState('')
+    const [userName, setUserName] = useState({username: '', age:''})
 
     const userNameHandler = (e) => {
-        setUserName(e.target.value)
+        setUserName({...userName, username: e.target.value})
     }
 
 
