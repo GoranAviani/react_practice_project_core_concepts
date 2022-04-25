@@ -1,7 +1,14 @@
 import React from "react";
 
+
+
 const ErrorModal = (props) => {
     return (
+        <React.Fragment>
+
+        <React.Fragment>
+
+        </React.Fragment>
         <React.Fragment>
             <h2>{props.title}</h2>
             <p>
@@ -12,6 +19,8 @@ const ErrorModal = (props) => {
                 <button>Close</button>
             </div>
         </React.Fragment>
+        </React.Fragment>
+
     )
 }
 
