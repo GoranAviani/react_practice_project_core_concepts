@@ -15,7 +15,7 @@ const App = () => {
     return (
         <div>
         <AddUser addUser={expandUserList}/>
-        <UserList/>
+        <UserList userList={userList}/>
     </div>
     )
 }
