@@ -1,9 +1,16 @@
 import React from "react";
 
-const ErrorModal = () => {
+const ErrorModal = (props) => {
     return (
         <React.Fragment>
-            error
+            <h2>{props.title}</h2>
+            <p>
+                            {props.errorMessage}
+
+            </p>
+            <div>
+                <button>Close</button>
+            </div>
         </React.Fragment>
     )
 }
